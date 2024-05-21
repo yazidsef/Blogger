@@ -9,7 +9,18 @@
 </style>
 
 <div class="example-wrapper">
-    <h1>Hello {{name }} {{lastname}} {{message}} ! ✅</h1>
+    <h1>Hello !  ✅</h1>
+    <h1>Hello !  ✅</h1>
+    {# pour recuperer une session avec twig< on fait
+        app.session.get('nomDeSession')
+      #}
+    <h2>Hello ! je suis la session et le nombre de visite est {{app.session.get('nbVisite')}} </h2>
+    <h2>Here we puts the number of clicks {{app.session.get('nbClick')}} </h2>
+    <h2>Here we puts the number of clicks </h2>
+    {% for session in app.session.get('todos') %}
+   ici on a toutes les session {{session}} <br> <br>
+        
+    {% endfor %}
 
     This friendly message is coming from:
     <ul>
